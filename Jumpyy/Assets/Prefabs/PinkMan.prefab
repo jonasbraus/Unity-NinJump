@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2962102361005584628}
   - component: {fileID: 2962102361005584629}
   m_Layer: 0
-  m_Name: MaskDude
+  m_Name: PinkMan
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -76,7 +76,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6367560908665664636, guid: 3750f45c844123341b9a777a96cb1eca, type: 3}
+  m_Sprite: {fileID: -6367560908665664636, guid: d348dff3819df794186a80cb95777629, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +97,7 @@ Animator:
   m_GameObject: {fileID: 2962102361005584619}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 6b3b9e5487390fc4dba50db40d08faf1, type: 2}
+  m_Controller: {fileID: 9100000, guid: a845cf90638bd1741ae4271b8eae201c, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -136,8 +136,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.036957443, y: -0.06762159}
-  m_Size: {x: 0.7672888, y: 1.042804}
+  m_Offset: {x: 0.017890453, y: -0.10799849}
+  m_Size: {x: 0.63942814, y: 0.78259635}
   m_Direction: 0
 --- !u!50 &2962102361005584629
 Rigidbody2D:

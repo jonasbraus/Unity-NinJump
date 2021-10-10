@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 2962102361005584628}
   - component: {fileID: 2962102361005584629}
   m_Layer: 0
-  m_Name: MaskDude
+  m_Name: VirtualGuy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

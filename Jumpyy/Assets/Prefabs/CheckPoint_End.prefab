@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 1379744885596989482}
   - component: {fileID: 1379744885596989480}
   - component: {fileID: 7164839113549340742}
+  - component: {fileID: 302173926932628770}
   m_Layer: 0
   m_Name: CheckPoint_End
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1379744885596989485}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 174.40001, y: -2.7, z: 0}
+  m_LocalPosition: {x: 174.5, y: -3.8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -123,3 +124,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6acc86fb31f38c4fa676ebf1097ae9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &302173926932628770
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1379744885596989485}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f2301fa15a6334e4b95f9ca0d324b015, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

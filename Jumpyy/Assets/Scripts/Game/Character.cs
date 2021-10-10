@@ -10,6 +10,7 @@ public class Character : MonoBehaviour
     [SerializeField] private float speed;
     [SerializeField] private float jumpForce;
     [SerializeField] private float rayCastLength;
+    [SerializeField] private float rayCastLengthLeftRight;
     
     private TMP_Text text_applesCount;
     
@@ -25,8 +26,13 @@ public class Character : MonoBehaviour
     private float hp = 3;
     public GameObject lastCheckPoint;
     private bool canDoubleJump = false;
+    private bool isTouchingWall = false;
+    private int leftRight = 0;
+    private float wallCheckDelay = 0;
 
     private int applesCount = 0;
+
+    private bool canMove = true;
 
     private void Awake()
     {
@@ -42,28 +48,38 @@ public class Character : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") && (isGrounded || canDoubleJump))
+        if(canMove)
         {
-            if (isGrounded)
+            if (Input.GetButtonDown("Jump") && (isGrounded || canDoubleJump || isTouchingWall))
             {
-                canDoubleJump = true;
-                rb.velocity = Vector2.zero;
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                if (isGrounded || isTouchingWall)
+                {
+                    canDoubleJump = true;
+                    rb.velocity = Vector2.zero;
+                    rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                }
+                else
+                {
+                    canDoubleJump = false;
+                    rb.velocity = Vector2.zero;
+                    rb.AddForce(Vector2.up * (jumpForce / 1.2f), ForceMode2D.Impulse);
+                }
+
+                isGrounded = false;
+                isTouchingWall = false;
             }
-            else
-            {
-                canDoubleJump = false;
-                rb.velocity = Vector2.zero;
-                rb.AddForce(Vector2.up * (jumpForce / 1.2f), ForceMode2D.Impulse);
-            }
-            isGrounded = false;
         }
     }
     
     private void FixedUpdate()
     {
-        Vector2 move = new Vector2(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
-        transform.Translate(move);
+        Vector2 move = new Vector2();
+        
+        if(canMove)
+        {
+            move = new Vector2(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
+            transform.Translate(move);
+        }
 
         hit2D = Physics2D.RaycastAll(transform.position, Vector2.down, rayCastLength);
 
@@ -82,7 +98,35 @@ public class Character : MonoBehaviour
             isGrounded = false;
             groundCheckDelay = 0;
         }
-        
+
+        hit2D = Physics2D.RaycastAll(transform.position, Vector2.left, rayCastLengthLeftRight);
+
+        if (wallCheckDelay < .01f)
+        {
+            wallCheckDelay += Time.deltaTime;
+        }
+
+        if (hit2D.Length > 1 && wallCheckDelay >= .01f && Input.GetAxis("Horizontal") < 0)
+        {
+            isTouchingWall = true;
+            leftRight = 0;
+            wallCheckDelay = 0;
+        }
+        else
+        {
+            hit2D = Physics2D.RaycastAll(transform.position, Vector2.right, rayCastLengthLeftRight);
+            if (hit2D.Length > 1 && wallCheckDelay >= .01f && Input.GetAxis("Horizontal") > 0)
+            {
+                isTouchingWall = true;
+                leftRight = 1;
+                wallCheckDelay = 0;
+            }
+            else if(wallCheckDelay >= .01f)
+            {
+                isTouchingWall = false;
+                wallCheckDelay = 0;
+            }
+        }
 
         if(Time.time - lastTimeDamage > .4f)
         {
@@ -123,6 +167,10 @@ public class Character : MonoBehaviour
     public void RegisterCheckPoint(GameObject checkPoint)
     {
         lastCheckPoint = checkPoint;
+        if (checkPoint.GetComponent<CheckPointEnd>())
+        {
+            canMove = false;
+        }
     }
 
     public void GetDamage(float amount)

@@ -17,6 +17,12 @@ public class Camera : MonoBehaviour
             case 1:
                 player = GameObject.Find("NinjaFrog(Clone)");
                 break;
+            case 2:
+                player = GameObject.Find("PinkMan(Clone)");
+                break;
+            case 3:
+                player = GameObject.Find("VirtualGuy(Clone)");
+                break;
         }
     }
 
