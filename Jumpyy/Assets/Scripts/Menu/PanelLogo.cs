@@ -9,7 +9,7 @@ public class PanelLogo : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.GetButtonDown("Jump"))
         {
             gameObject.transform.localScale = new Vector2();
             transition.Play();

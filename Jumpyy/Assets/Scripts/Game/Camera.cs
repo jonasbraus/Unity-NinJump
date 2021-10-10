@@ -1,10 +1,24 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Camera : MonoBehaviour
 {
-    [SerializeField] private GameObject player;
+    private GameObject player;
+
+    private void Start()
+    {
+        switch (PlayerPrefs.GetInt("SelectedCharacter"))
+        {
+            case 0:
+                player = GameObject.Find("MaskDude(Clone)");
+                break;
+            case 1:
+                player = GameObject.Find("NinjaFrog(Clone)");
+                break;
+        }
+    }
 
     private void Update()
     {

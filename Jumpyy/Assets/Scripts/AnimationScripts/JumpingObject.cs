@@ -33,5 +33,9 @@ public class JumpingObject : MonoBehaviour
 
             transform.Translate(velocity * speed * Time.deltaTime);
         }
+        else
+        {
+            defaultPositionY = transform.position.y;
+        }
     }
 }
