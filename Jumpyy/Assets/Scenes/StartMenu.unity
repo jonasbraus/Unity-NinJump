@@ -155,10 +155,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115}
-  m_SizeDelta: {x: 750.4324, y: 332.36792}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: -164}
+  m_SizeDelta: {x: 850.4324, y: 430.36792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &86804197
 MonoBehaviour:
@@ -325,10 +325,10 @@ RectTransform:
   m_Father: {fileID: 1427073657}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 2352.5818, y: 875.886}
+  m_SizeDelta: {x: 3094.5818, y: 1303.886}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &242548846
 MonoBehaviour:
@@ -344,6 +344,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!114 &242548847
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -476,10 +477,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -108}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -59}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &267825259
 MonoBehaviour:
@@ -525,13 +526,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 267825259}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -589,6 +590,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &571286012
 GameObject:
   m_ObjectHideFlags: 0
@@ -4971,10 +4973,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -228}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -102, y: -179}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &787999467
 MonoBehaviour:
@@ -5020,13 +5022,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 787999467}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5084,6 +5086,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &796470913
 GameObject:
   m_ObjectHideFlags: 0
@@ -5118,10 +5121,10 @@ RectTransform:
   m_Father: {fileID: 825613020}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 125, y: -203.5}
-  m_SizeDelta: {x: 1960, y: 797}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 125, y: -502.5}
+  m_SizeDelta: {x: 200, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &796470915
 MonoBehaviour:
@@ -5231,6 +5234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &800837979
 GameObject:
   m_ObjectHideFlags: 0
@@ -5266,10 +5270,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 97.900055, y: -108}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 97.900055, y: -59}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &800837981
 MonoBehaviour:
@@ -5315,13 +5319,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 800837981}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -5379,6 +5383,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &825613019
 GameObject:
   m_ObjectHideFlags: 0
@@ -6006,10 +6011,10 @@ RectTransform:
   m_Father: {fileID: 825613020}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 362, y: -203.5}
-  m_SizeDelta: {x: 1960, y: 797}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 362, y: -502.5}
+  m_SizeDelta: {x: 200, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1363191830
 MonoBehaviour:
@@ -6119,6 +6124,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!114 &1407735081 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2003649819990852948, guid: 4dda51b0dc066414d851b961bb94bdf9, type: 3}
@@ -6270,10 +6276,10 @@ RectTransform:
   m_Father: {fileID: 1409818330}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -438.4364, y: -314.1102}
+  m_SizeDelta: {x: 741.5636, y: 427.8898}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1427073658
 MonoBehaviour:
@@ -6324,10 +6330,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -102, y: -108}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -102, y: -59}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1514307543
 MonoBehaviour:
@@ -6373,13 +6379,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1514307543}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -6437,6 +6443,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &1555855632
 GameObject:
   m_ObjectHideFlags: 0
@@ -6622,10 +6629,10 @@ RectTransform:
   m_Father: {fileID: 825613020}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -115}
-  m_SizeDelta: {x: 2610.4324, y: 1028.3679}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0, y: 184}
+  m_SizeDelta: {x: 850.4324, y: 430.36792}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1735145825
 MonoBehaviour:
@@ -6821,10 +6828,10 @@ RectTransform:
   m_Father: {fileID: 825613020}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -350, y: -203.5}
-  m_SizeDelta: {x: 1960, y: 797}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -350, y: -502.5}
+  m_SizeDelta: {x: 200, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1883627647
 MonoBehaviour:
@@ -6934,6 +6941,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &1893244978
 GameObject:
   m_ObjectHideFlags: 0
@@ -7138,10 +7146,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -228}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 0, y: -179}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1963328299
 MonoBehaviour:
@@ -7187,13 +7195,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 1963328299}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7251,6 +7259,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &2005215677
 GameObject:
   m_ObjectHideFlags: 0
@@ -7285,10 +7294,10 @@ RectTransform:
   m_Father: {fileID: 825613020}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -115, y: -203.5}
-  m_SizeDelta: {x: 1960, y: 797}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: -115, y: -502.5}
+  m_SizeDelta: {x: 200, y: 199}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005215679
 MonoBehaviour:
@@ -7398,6 +7407,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1 &2032205419
 GameObject:
   m_ObjectHideFlags: 0
@@ -7477,10 +7487,10 @@ RectTransform:
   m_Father: {fileID: 1765446013}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 97.9, y: -228}
-  m_SizeDelta: {x: -25, y: -23}
+  m_AnchorMin: {x: 0.5, y: 0}
+  m_AnchorMax: {x: 0.5, y: 0}
+  m_AnchoredPosition: {x: 97.9, y: -179}
+  m_SizeDelta: {x: 75, y: 75}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2091316710
 MonoBehaviour:
@@ -7526,13 +7536,13 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1765446012}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
+      - m_Target: {fileID: 1765446014}
+        m_TargetAssemblyTypeName: PanelSelectWorld, Assembly-CSharp
+        m_MethodName: ButtonWorldSelect
+        m_Mode: 2
         m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
+          m_ObjectArgument: {fileID: 2091316710}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.UI.Button, UnityEngine.UI
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -7590,6 +7600,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   amplitude: 20
   speed: 80
+  active: 1
 --- !u!1001 &2003649820769439869
 PrefabInstance:
   m_ObjectHideFlags: 0
