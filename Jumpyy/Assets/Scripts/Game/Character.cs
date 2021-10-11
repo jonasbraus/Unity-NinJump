@@ -117,7 +117,7 @@ public class Character : MonoBehaviour
             wallCheckDelay += Time.deltaTime;
         }
 
-        if (hit2D.Length > 1 && wallCheckDelay >= .01f && Input.GetAxis("Horizontal") < 0)
+        if (hit2D.Length > 1 && wallCheckDelay >= .01f && (Input.GetAxis("Horizontal") < 0 || CrossPlatformInputManager.GetAxis("Horizontal") < 0))
         {
             isTouchingWall = true;
             leftRight = 0;
@@ -126,7 +126,7 @@ public class Character : MonoBehaviour
         else
         {
             hit2D = Physics2D.RaycastAll(transform.position, Vector2.right, rayCastLengthLeftRight);
-            if (hit2D.Length > 1 && wallCheckDelay >= .01f && Input.GetAxis("Horizontal") > 0)
+            if (hit2D.Length > 1 && wallCheckDelay >= .01f && (Input.GetAxis("Horizontal") > 0 || CrossPlatformInputManager.GetAxis("Horizontal") > 0))
             {
                 isTouchingWall = true;
                 leftRight = 1;
@@ -187,13 +187,16 @@ public class Character : MonoBehaviour
     public void GetDamage(float amount)
     {
         SetAnimationState(3);
-        lastTimeDamage = Time.time;
-        hp -= amount;
+        if(Time.time - lastTimeDamage > 1)
+        {
+            hp -= amount;
+        }
         heartManager.UpdateHearts(hp);
         if (hp <= 0)
         {
             Die();
         }
+        lastTimeDamage = Time.time;
     }
 
     private void Die()
