@@ -56,23 +56,6 @@ public class HeartManager : MonoBehaviour
             hearts[1].sprite = heartSprites[2];
             hearts[2].sprite = heartSprites[2];
         }
-
-        foreach (Image img in hearts)
-        {
-            img.GetComponent<JumpingObject>().active = true;
-            lastTimeActiveAnimation = Time.time;
-        }
         
-    }
-
-    private void Update()
-    {
-        if (Time.time - lastTimeActiveAnimation > 1.2f)
-        {
-            foreach (Image img in hearts)
-            {
-                img.GetComponent<JumpingObject>().active = false;
-            }
-        }
     }
 }

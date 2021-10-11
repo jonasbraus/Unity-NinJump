@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityStandardAssets.CrossPlatformInput;
 
 public class Character : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Character : MonoBehaviour
 
     private bool canMove = true;
 
+    private bool jumpRequest = false;
+
     private void Awake()
     {
         heartManager = GameObject.Find("Overlay").GetComponent<HeartManager>();
@@ -46,12 +49,19 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void RequestJump()
+    {
+        jumpRequest = true;
+    }
+
     private void Update()
     {
         if(canMove)
         {
-            if (Input.GetButtonDown("Jump") && (isGrounded || canDoubleJump || isTouchingWall))
+            if ((Input.GetButtonDown("Jump") || jumpRequest) && (isGrounded || canDoubleJump || isTouchingWall))
             {
+                jumpRequest = false;
+                
                 if (isGrounded || isTouchingWall)
                 {
                     canDoubleJump = true;
@@ -77,7 +87,7 @@ public class Character : MonoBehaviour
         
         if(canMove)
         {
-            move = new Vector2(Input.GetAxis("Horizontal") * speed * Time.deltaTime, 0);
+            move = new Vector2((CrossPlatformInputManager.GetAxis("Horizontal") + Input.GetAxis("Horizontal")) * speed * Time.deltaTime, 0);
             transform.Translate(move);
         }
 
@@ -91,6 +101,7 @@ public class Character : MonoBehaviour
         if (hit2D.Length > 1 && groundCheckDelay >= .01f)
         {
             isGrounded = true;
+            jumpRequest = false;
             groundCheckDelay = 0;
         }
         else if(groundCheckDelay >= .01f)
