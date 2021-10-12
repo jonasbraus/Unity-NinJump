@@ -197,12 +197,21 @@ public class Character : MonoBehaviour
             }
         }
 
-        hit2D = Physics2D.RaycastAll(transform.position, Vector2.down, rayCastLength + .5f);
+        hit2D = Physics2D.RaycastAll(transform.position, Vector2.down, rayCastLength + 1f);
         if (hit2D.Length > 1)
         {
             if (hit2D[1].collider.gameObject.GetComponent<InvisibleBlock>())
             {
                 hit2D[1].collider.gameObject.GetComponent<InvisibleBlock>().Trigger();
+            }
+        }
+        
+        hit2D = Physics2D.RaycastAll(transform.position, Vector2.down, -rayCastLength - 1f);
+        if (hit2D.Length > 1)
+        {
+            if (hit2D[1].collider.gameObject.GetComponent<MovingPlatform>())
+            {
+                hit2D[1].collider.gameObject.GetComponent<MovingPlatform>().Trigger();
             }
         }
     }
