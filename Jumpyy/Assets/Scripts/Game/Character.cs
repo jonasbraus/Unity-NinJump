@@ -196,6 +196,15 @@ public class Character : MonoBehaviour
                 SetAnimationState(2);
             }
         }
+
+        hit2D = Physics2D.RaycastAll(transform.position, Vector2.down, rayCastLength + .5f);
+        if (hit2D.Length > 1)
+        {
+            if (hit2D[1].collider.gameObject.GetComponent<InvisibleBlock>())
+            {
+                hit2D[1].collider.gameObject.GetComponent<InvisibleBlock>().Trigger();
+            }
+        }
     }
 
     public void RegisterCheckPoint(GameObject checkPoint)
@@ -257,8 +266,8 @@ public class Character : MonoBehaviour
                     break;
                 case ItemType.Banana:
                     rb.gravityScale = .4f;
-                    timeNoDamageStarted = Time.time;
                     noGravity = true;
+                    timeNoDamageStarted = Time.time;
                     renderer.color = Color.gray;
                     break;
             }

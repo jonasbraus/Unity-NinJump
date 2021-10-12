@@ -36,10 +36,10 @@ public class PanelSelectLevel : MonoBehaviour
     public void ButtonLevelSelect(Button button)
     {
         index = int.Parse(button.name.Substring(12, 1)) - 1;
-        PlayerPrefs.SetInt("SelectedLevel", index);
+        PlayerPrefs.SetInt("SelectedLevel", index + 1);
         PlayerPrefs.Save();
         
-        SceneManager.LoadScene("Level" + (index + 1) + "World" + (PlayerPrefs.GetInt("SelectedWorld") + 1),
+        SceneManager.LoadScene("Level" + (index + 1) + "World" + (PlayerPrefs.GetInt("SelectedWorld")),
             LoadSceneMode.Single);
     }
 }

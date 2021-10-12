@@ -36,7 +36,7 @@ public class PanelSelectWorld : MonoBehaviour
     public void ButtonWorldSelect(Button button)
     {
         index = int.Parse(button.name.Substring(12, 1)) - 1;
-        PlayerPrefs.SetInt("SelectedWorld", index);
+        PlayerPrefs.SetInt("SelectedWorld", index + 1);
         PlayerPrefs.Save();
 
         gameObject.transform.localScale = Vector2.zero;
