@@ -12,14 +12,10 @@ public class Character : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float rayCastLength;
     [SerializeField] private float rayCastLengthLeftRight;
-    
     private TMP_Text text_applesCount;
-    
     private Animator anim;
     private Rigidbody2D rb;
-    
     private HeartManager heartManager;
-    
     private bool isGrounded = false;
     private float lastTimeDamage = 0;
     private float groundCheckDelay = 1;
@@ -30,11 +26,8 @@ public class Character : MonoBehaviour
     private bool isTouchingWall = false;
     private int leftRight = 0;
     private float wallCheckDelay = 0;
-
     private int applesCount = 0;
-
-    private bool canMove = true;
-
+    public bool canMove = true;
     private bool jumpRequest = false;
 
     private void Awake()
