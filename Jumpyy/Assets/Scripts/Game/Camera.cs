@@ -20,15 +20,14 @@ public class Camera : MonoBehaviour
             case 2:
                 player = GameObject.Find("PinkMan(Clone)");
                 break;
-            case 3:
-                player = GameObject.Find("VirtualGuy(Clone)");
-                break;
         }
     }
 
     private void Update()
     {
-        Vector3 position = new Vector3(player.transform.position.x, transform.position.y, transform.position.z);
+        int offsetY = (int)player.transform.position.y / 5;
+        Vector3 position = new Vector3(player.transform.position.x, (offsetY * 4.8f) + .4f, transform.position.z);
+
         transform.position = position;
     }
 }

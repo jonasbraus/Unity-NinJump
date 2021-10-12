@@ -118,11 +118,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8cc0aeb25f9b284e868effed89e8cb8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 3.8
   jumpForce: 6.5
   rayCastLength: 0.62
   rayCastLengthLeftRight: 0.4
   lastCheckPoint: {fileID: 0}
+  applesCount: 0
+  canMove: 1
 --- !u!70 &2962102361005584628
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

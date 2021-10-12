@@ -20,9 +20,6 @@ public class ButtonPauseMenu : MonoBehaviour
             case 2:
                 player = GameObject.Find("PinkMan(Clone)").GetComponent<Character>();
                 break;
-            case 3:
-                player = GameObject.Find("VirtualGuy(Clone)").GetComponent<Character>();
-                break;
         }
     }
     

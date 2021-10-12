@@ -123,6 +123,8 @@ MonoBehaviour:
   rayCastLength: 0.62
   rayCastLengthLeftRight: 0.4
   lastCheckPoint: {fileID: 0}
+  applesCount: 20
+  canMove: 1
 --- !u!70 &2962102361005584628
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

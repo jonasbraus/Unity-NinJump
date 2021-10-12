@@ -12,6 +12,7 @@ public class Character : MonoBehaviour
     [SerializeField] private float jumpForce;
     [SerializeField] private float rayCastLength;
     [SerializeField] private float rayCastLengthLeftRight;
+    private SpriteRenderer renderer;
     private TMP_Text text_applesCount;
     private Animator anim;
     private Rigidbody2D rb;
@@ -30,6 +31,10 @@ public class Character : MonoBehaviour
     public bool canMove = true;
     private bool jumpRequest = false;
     private CheckPointEnd checkPointEnd;
+    private float timeNoDamageStarted;
+    private bool noDamage = false;
+    private float timeNoGravityStarted;
+    private bool noGravity = false;
 
     private void Awake()
     {
@@ -43,6 +48,9 @@ public class Character : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         checkPointEnd = GameObject.Find("CheckPoint_End").GetComponent<CheckPointEnd>();
         text_applesCount.text = "0/" + checkPointEnd.neededAppleCount;
+        renderer = GetComponent<SpriteRenderer>();
+        
+        text_applesCount.text = applesCount + "/" + checkPointEnd.neededAppleCount;
     }
 
     public void RequestJump()
@@ -54,6 +62,25 @@ public class Character : MonoBehaviour
     {
         if(canMove)
         {
+            if (noDamage)
+            {
+                if (Time.time - timeNoDamageStarted > 8)
+                {
+                    noDamage = false;
+                    renderer.color = Color.white;
+                }
+            }
+
+            if (noGravity)
+            {
+                if (Time.time - timeNoGravityStarted > 15)
+                {
+                    noGravity = false;
+                    rb.gravityScale = 1;
+                    renderer.color = Color.white;
+                }
+            }
+            
             if ((Input.GetButtonDown("Jump") || jumpRequest) && (isGrounded || canDoubleJump || isTouchingWall))
             {
                 jumpRequest = false;
@@ -178,17 +205,22 @@ public class Character : MonoBehaviour
 
     public void GetDamage(float amount)
     {
-        SetAnimationState(3);
-        if(Time.time - lastTimeDamage > 1)
+        if(!noDamage)
         {
-            hp -= amount;
+            SetAnimationState(3);
+            if (Time.time - lastTimeDamage > 1)
+            {
+                hp -= amount;
+            }
+
+            heartManager.UpdateHearts(hp);
+            if (hp <= 0)
+            {
+                Die();
+            }
+
+            lastTimeDamage = Time.time;
         }
-        heartManager.UpdateHearts(hp);
-        if (hp <= 0)
-        {
-            Die();
-        }
-        lastTimeDamage = Time.time;
     }
 
     private void Die()
@@ -217,6 +249,17 @@ public class Character : MonoBehaviour
                 case ItemType.Cherry:
                     applesCount += 5;
                     text_applesCount.text = applesCount + "/" + checkPointEnd.neededAppleCount;
+                    break;
+                case ItemType.Melon:
+                    noDamage = true;
+                    timeNoDamageStarted = Time.time;
+                    renderer.color = new Color(1, 1, 1, .4f);
+                    break;
+                case ItemType.Banana:
+                    rb.gravityScale = .4f;
+                    timeNoDamageStarted = Time.time;
+                    noGravity = true;
+                    renderer.color = Color.gray;
                     break;
             }
         }

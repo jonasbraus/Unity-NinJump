@@ -119,10 +119,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 3
-  jumpForce: 6.5
+  jumpForce: 7.5
   rayCastLength: 0.62
   rayCastLengthLeftRight: 0.4
   lastCheckPoint: {fileID: 0}
+  applesCount: 0
+  canMove: 1
 --- !u!70 &2962102361005584628
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
