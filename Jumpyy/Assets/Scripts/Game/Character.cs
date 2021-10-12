@@ -26,9 +26,10 @@ public class Character : MonoBehaviour
     private bool isTouchingWall = false;
     private int leftRight = 0;
     private float wallCheckDelay = 0;
-    private int applesCount = 0;
+    public int applesCount = 0;
     public bool canMove = true;
     private bool jumpRequest = false;
+    private CheckPointEnd checkPointEnd;
 
     private void Awake()
     {
@@ -40,6 +41,8 @@ public class Character : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        checkPointEnd = GameObject.Find("CheckPoint_End").GetComponent<CheckPointEnd>();
+        text_applesCount.text = "0/" + checkPointEnd.neededAppleCount;
     }
 
     public void RequestJump()
@@ -171,10 +174,6 @@ public class Character : MonoBehaviour
     public void RegisterCheckPoint(GameObject checkPoint)
     {
         lastCheckPoint = checkPoint;
-        if (checkPoint.GetComponent<CheckPointEnd>())
-        {
-            canMove = false;
-        }
     }
 
     public void GetDamage(float amount)
@@ -213,7 +212,11 @@ public class Character : MonoBehaviour
             {
                 case ItemType.Apple:
                     applesCount++;
-                    text_applesCount.text = applesCount.ToString();
+                    text_applesCount.text = applesCount + "/" + checkPointEnd.neededAppleCount;
+                    break;
+                case ItemType.Cherry:
+                    applesCount += 5;
+                    text_applesCount.text = applesCount + "/" + checkPointEnd.neededAppleCount;
                     break;
             }
         }
